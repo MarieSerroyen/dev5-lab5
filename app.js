@@ -13,6 +13,10 @@ app.set('view engine', 'jade');
 
 app.use('/api/v1/messages', messages);
 
+app.use(function(req, res, next){
+  next(createError(404));
+});
+
 app.get('/', (req, res) => {
   res.render('index', { title: 'Hello', message: 'user' });
 });
