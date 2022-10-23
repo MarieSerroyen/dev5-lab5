@@ -15,9 +15,11 @@ const getAll = (req, res) => {
 }
 
 const getId = (req, res) => {
+  const id = req.params.id;
+
   const response = {
     status: 'success',
-    message: "GETTING message 1",
+    message: `GETTING message with id: ${id}`,
     data: {
       messages: [
         {
