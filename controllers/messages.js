@@ -1,4 +1,22 @@
 const getAll = (req, res) => {
+  if(req.query.user) {
+    const user = req.query.user;
+
+    const response = {
+      status: 'success',
+      message: `GETTING messages for user: ${user}`,
+      data: {
+        messages: [
+          {
+            "user": user,
+            "message": "What a nice message!"
+          }
+        ]
+      }
+    };
+    res.json(response);
+  };
+
   const response = {
     status: 'success',
     message: "GETTING messages",
